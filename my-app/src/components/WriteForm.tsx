@@ -57,7 +57,6 @@ const isFreeTime=(date:Date)=>{
         const response =await AuthService.getFreeTime(email,date.toLocaleDateString());
         setFreeTimes(response.data)
         setStartDate(date);
-        console.log(freeTimes)
 
     }
 
