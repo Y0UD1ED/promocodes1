@@ -214,7 +214,7 @@ export default class Store {
 
     async updateAvatar(file:FormData) {
         try {
-            await axios.post(`http://localhost:8000/upload${this.user.id}`, file)
+            await axios.post(`http://www.crewimposter.ru:8000/upload${this.user.id}`, file)
         } catch (e) {
             console.log(e);
         }finally{
