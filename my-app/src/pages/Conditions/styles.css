@@ -1,0 +1,65 @@
+.ConditionsPart{
+    font-size: 22px;
+    font-weight: 400;
+    background: #E4EBEB;
+    padding-bottom: 40px;
+    height: 100%;
+    color: #1B3442;
+}
+
+.ConditionsTitle{
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    text-align: center;
+
+}
+
+.ConditionsTitle p{
+    display: inline;
+    padding: 5px 40px;
+    border-bottom: 3px #99BABC solid;
+}
+
+.ConditionsText{
+    padding: 40px 60px;
+    margin: 0px 60px;
+    border-radius: 25px;
+    line-height: 35px;
+    background: #D9D9D9;
+}
+
+@media (max-width:800px) {
+    .ConditionsPart{
+        font-size: 18px;
+    }
+    .ConditionsTitle{
+        font-size: 22px;
+    }
+    .ConditionsTitle p{
+        display: block;
+        border: none;
+    }
+}
+
+
+
+@media (max-width:600px) {
+    .ConditionsText{
+        padding: 20px 30px;
+        margin: 0 30px;
+    }
+}
+
+@media (max-width:500px) {
+    .ConditionsPart{
+        font-size: 16px;
+    }
+    .ConditionsTitle{
+        font-size: 18px;
+    }
+    .ConditionsText{
+        line-height: 30px;
+    }
+}

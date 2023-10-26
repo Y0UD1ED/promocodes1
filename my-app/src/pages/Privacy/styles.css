@@ -1,0 +1,85 @@
+.PoliticPart{
+    font-size: 22px;
+    font-weight: 400;
+    background: #E4EBEB;
+    padding-bottom: 40px;
+    height: 100%;
+    color: #1B3442;
+}
+
+.PoliticTitle{
+    font-size: 24px;
+    font-weight: 600;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    text-align: center;
+
+}
+
+.PoliticTitle p{
+    display: inline;
+    padding: 5px 40px;
+    border-bottom: 3px #99BABC solid;
+}
+
+.PoliticText{
+    padding: 40px 60px;
+    margin: 0px 60px;
+    border-radius: 25px;
+    line-height: 35px;
+    background: #D9D9D9;
+}
+
+
+@media (max-width:800px) {
+    .PoliticPart{
+        font-size: 18px;
+    }
+    .PoliticTitle{
+        font-size: 22px;
+    }
+    .PoliticTitle p{
+        display: block;
+        border: none;
+    }
+}
+
+
+
+@media (max-width:600px) {
+    .PoliticText{
+        padding: 20px 30px;
+        margin: 0 30px;
+    }
+}
+
+@media (max-width:500px) {
+    .PoliticPart{
+        font-size: 16px;
+    }
+    .PoliticTitle{
+        font-size: 18px;
+    }
+    .PoliticText{
+        line-height: 30px;
+    }
+}
+ol { counter-reset:section; list-style-type:none; }
+ol li { list-style-type:none; }
+ol li ol { counter-reset:subsection; }
+ol li:before{
+    counter-increment:section;
+    content:counter(section) ". ";/*content:"Section " counter(section) ". ";*/
+}
+ol li ol li:before {
+    counter-increment:subsection;
+    content:counter(section) "." counter(subsection) " ";
+}
+.dashOL ol li:before{
+    content: "— ";
+}
+
+.dotOL ol li:before{
+    padding-left: 17px;
+    content: "• ";
+}

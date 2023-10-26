@@ -1,0 +1,118 @@
+@media (max-width:900px) {
+    .user_row{
+        flex-direction: column;
+    }
+    .user_avatar{
+        display: flex;
+    }
+    .user_text{
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+
+    .user_title{
+        display: none;
+    }
+    .user_tabs{
+        padding-top: 20px;
+    }
+    .user_img{
+        padding-right: 30px;
+        border-right: none;
+    }
+    .exit_btn{
+        padding-left: 2px;
+    }
+
+    .change_mobile_btn{
+        display: block;
+    }
+
+    .change_mobile_btn button{
+        margin-top: 10px;
+        padding: 10px;
+        background: #ffffff;
+        color:#1B3442;
+        font-size: 22px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
+    
+   
+}
+
+@media (max-width:685px) {
+    .user_row{
+        padding-left: 40px;
+    }
+    .user_img img{
+        width: 205px;
+        height: 250px;
+    }
+
+    .card_row{
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .card_check{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 20px
+    }
+
+    .card_cancel p{
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:550px) {
+    .user_tabs{
+        font-size: 16px;
+    }
+
+    .tab_writes_act p{
+        padding: 5px 20px 5px 20px;
+    }
+    
+    .tab_subs_act p{
+        padding: 5px 20px 5px 20px;
+    }
+    .change_mobile_btn button{
+        padding: 5px;
+        margin-top: 0px;
+        font-size: 14px;
+    }
+
+    .exit_btn{
+        padding-top: 10px;
+        font-size: 18px;
+    }
+
+    .user_row{
+        padding-left: 20px;
+    }
+    .user_img{
+        padding-right: 15px;
+    }
+
+    .user_img img{
+        width: 160px;
+        height: 200px;
+    }
+}
+
+@media (max-width:300px) {
+    .user_img{
+        padding-right: 5px;
+    }
+    .user_img img{
+        width: 120px;
+        height: 160px;
+    }
+}
