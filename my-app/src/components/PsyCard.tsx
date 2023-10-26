@@ -26,7 +26,7 @@ function PsyCard(psy:PsyI){
     const name=psy.psy.lastName+' '+ psy.psy.firstName;
     const[write,setWrite]=useState(false);
     const [freeDates,setFreeDates]=useState<string[]>([]);
-    const avatar=psy.psy.avatar!==''?`http://localhost:8000/${psy.psy.avatar}`:'spec.jpg';
+    const avatar=psy.psy.avatar!==''?`http://www.crewimposter.ru:8000/${psy.psy.avatar}`:'spec.jpg';
     const getFreeDates=async()=>{
         try{
             const response=await AuthService.getFreeDate(email);
