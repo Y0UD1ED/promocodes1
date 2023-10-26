@@ -126,7 +126,7 @@ const UserAccount=()=>{
     const [aboutMe, setAboutMe]=useState('');
     const [code,setCode]=useState('');
     const [message,setMessage]=useState('')
-    const avatar=store.user.avatar!==''?`http://localhost:8000/${store.user.avatar}`:'spec.jpg'; 
+    const avatar=store.user.avatar!==''?`http://www.crewimposter.ru:8000/${store.user.avatar}`:'spec.jpg'; 
 
     const [writes,setWrites]=useState([])
     const getWrites=async()=>{
