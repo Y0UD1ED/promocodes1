@@ -51,7 +51,6 @@ const boxStyle = {
         const blob = await result.blob();
         const file0 = new File([blob], 'file.jpg')
         setFile(file0)
-        console.log(file)
       const formData = new FormData();
       formData.append('file', file0);
       
@@ -153,12 +152,14 @@ const PsyAccount=()=>{
     const [writes,setWrites]=useState([])
     const getWrites=async()=>{
         try{
+            store.setWaiting(true);
             const response=await AuthService.getPsyWrites(store.user.email);
             setWrites(response.data);
-            console.log(writes)
             setTab(false)
         }catch(e){
             console.log(e);
+        }finally{
+          store.setWaiting(false)
         }
     }
     useEffect(() => {
@@ -184,13 +185,6 @@ const PsyAccount=()=>{
       setModalOpen(true);
     };
 
-    const showDate=(date)=>{
-      const d=date.toLocaleDateString()
-      const t=date.toLocaleTimeString()
-      console.log(t)
-      setStartDate(date);
-
-  }
 
     const change=async ()=>{
 
@@ -212,7 +206,6 @@ const PsyAccount=()=>{
   const dateTab=async ()=>{
     const response=await UserService.fetchDates(store.user.email);
     setPsyDates(response.data);
-    console.log('k');
     setTab(true);
 }
 

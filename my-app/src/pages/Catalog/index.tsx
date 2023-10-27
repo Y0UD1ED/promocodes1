@@ -9,6 +9,7 @@ import { Context } from '../..';
 import Loading from '../../components/Loading';
 
 const Catalog:FC=()=>{
+    window.scrollTo(0,0);
     const [psychologists,setPsychologists]=useState<IUser[]>([]);
     const getPsy=async()=>{
         try{
@@ -39,7 +40,7 @@ if (psychologists.length===0){
                 <div className='CatalogPart'>
                     <div className='container'>
                         <div className='CatalogTitle'>
-                            <p onClick={()=>console.log(psychologists[2])}>Психологи</p>
+                            <p>Психологи</p>
                         </div>
                         <div className='CatalogPsy_blocks'>
                           {psychologists.map(psy=>

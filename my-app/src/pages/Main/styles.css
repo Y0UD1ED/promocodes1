@@ -101,6 +101,7 @@
     .test_button{
         justify-content: center;
         float: none;
+        margin-left: 0;
     }
 }
 
@@ -401,22 +402,27 @@
         font-size: 18px;
     }
     .test_title{
-        font-size: 22px;
+        font-size: 20px;
         line-height: normal;
     }
     .test_button{
-        font-size: 22px;
+        font-size: 20px;
+        padding: 15px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     .info_title p{
-        font-size: 22px;
+        font-size: 20px;
+        padding: 15px;
     }
     .info_text{
         font-size: 16px;
         line-height: 28px;
     }
     .spec_title p{
-        font-size: 22px;
+        font-size: 20px;
+        padding: 15px;
     }
 
     .spec_line{

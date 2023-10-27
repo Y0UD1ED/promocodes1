@@ -1,7 +1,10 @@
-import React, { FC, useState,createContext } from 'react';
+import React, { FC, useState,createContext, useContext } from 'react';
 import WriteForm from './WriteForm';
 import { IUser } from '../models/response/IUser';
 import AuthService from '../services/AuthService';
+import { ModuleContext } from '../App';
+import { Context } from '..';
+import { observer } from 'mobx-react-lite';
 
 interface PsyI{
     psy:IUser;
@@ -21,7 +24,8 @@ export const PsyContext=createContext<PsyC>({
 
 
 function PsyCard(psy:PsyI){
-
+    const {showmodule,setShowmodule}=useContext(ModuleContext);
+    const {store}=useContext(Context)
     const email=psy.psy.email
     const name=psy.psy.lastName+' '+ psy.psy.firstName;
     const[write,setWrite]=useState(false);
@@ -29,11 +33,13 @@ function PsyCard(psy:PsyI){
     const avatar=psy.psy.avatar!==''?`http://www.crewimposter.ru:8000/${psy.psy.avatar}`:'spec.jpg';
     const getFreeDates=async()=>{
         try{
+            store.setWaiting(true);
             const response=await AuthService.getFreeDate(email);
             setFreeDates(response.data);
-            console.log(email)
         }catch(e){
             console.log(e);
+        }finally{
+            store.setWaiting(false);
         }
         setWrite(true)
     }
@@ -47,13 +53,18 @@ function PsyCard(psy:PsyI){
                     </div>
                     <div className='PsyInfo'>
                         <p>{psy.psy.lastName+' '+psy.psy.firstName+' '+ psy.psy.middleName}</p>
-                        <p>{psy.psy.experience||"Не указано"}</p>
-                        <p>{psy.psy.role}</p>
+                        <p>{"Опыт работы: "+ (psy.psy.experience||"Не указано")}</p>
+                        <p>{"Достижения: "+(psy.psy.achievements||"Не указано")}</p>
                     </div>
                 </div>
                 
             </div>
-            <div className='Btn' onClick={()=>getFreeDates()}>
+            <div className='Btn' style={{display:store.isAuth?'block':'none'}} onClick={()=>getFreeDates()}>
+                    <div className='CatalogPsy_btn'>
+                        <p>Записаться</p>
+                    </div> 
+            </div>
+            <div className='Btn' style={{display:store.isAuth?'none':'block'}} onClick={()=>setShowmodule(true)}>
                     <div className='CatalogPsy_btn'>
                         <p>Записаться</p>
                     </div> 
@@ -71,4 +82,4 @@ function PsyCard(psy:PsyI){
     );
 }
 
-export default PsyCard
+export default observer(PsyCard)

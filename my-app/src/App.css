@@ -200,6 +200,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 }
 .footer_row p{
     cursor: pointer;
+    color: #1B3442;
 }
 
 .footer_row p:nth-child(2){
@@ -213,6 +214,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
         justify-self: center;
         align-items: center;
         padding: 10px;
+        font-size: 18px;
     }
     .footer_row p{
         padding: 5px 0px;

@@ -44,7 +44,6 @@ const boxStyle = {
         const blob = await result.blob();
         const file0 = new File([blob], 'file.jpg')
         setFile(file0)
-        console.log(file)
       const formData = new FormData();
       formData.append('file', file0);
       
@@ -131,12 +130,14 @@ const UserAccount=()=>{
     const [writes,setWrites]=useState([])
     const getWrites=async()=>{
         try{
+            store.setWaiting(true);
             const response=await AuthService.getClientWrites(store.user.email);
             setWrites(response.data);
-            console.log(writes)
             setTab(false)
         }catch(e){
             console.log(e);
+        }finally{
+          store.setWaiting(false);
         }
     }
     useEffect(() => {

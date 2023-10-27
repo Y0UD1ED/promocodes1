@@ -9,6 +9,7 @@ import NavBar from '../../components/NavBar';
 import './styles.css'
 
 const Info:FC=()=>{
+    window.scrollTo(0,0);
     const [info,setInfo]=useState(0);
 
     function showInfo(i:number):ReactElement{

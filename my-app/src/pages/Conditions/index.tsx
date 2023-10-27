@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import './styles.css'
 
 const Conditions:FC=()=>{
+    window.scrollTo(0,0);
     return(
         <div className="wrapper">
             <div className="content">

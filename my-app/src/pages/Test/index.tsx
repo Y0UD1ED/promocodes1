@@ -7,6 +7,7 @@ import { PATHS } from '../../router';
 import Footer from '../../components/Footer';
 
 const Test:FC=()=>{
+    window.scrollTo(0,0);
     const [umod,setUmod]=useState<UserModel>(new UserModel());
     const [count,setCount]=useState<number>(0);
     const [err,setErr]=useState<Boolean>(false);
@@ -25,7 +26,6 @@ const Test:FC=()=>{
         copy.answer[step]=value;
         copy.score+=value;
         setUmod(copy);
-        console.log(umod);
     }
 
     const showRezult=()=>{
