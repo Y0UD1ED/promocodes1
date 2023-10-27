@@ -22,10 +22,11 @@ function NavBurger({burger,setBurger}:Props){
             <div className="nav_menu" onClick={e=>e.stopPropagation()}>
                     <div className="nav_content">
                         <ul>
-                            <li onClick={()=>setShowmodule(true)} style={{display:store.isAuth?'none':'flex'}}>Войти</li>
+                            <li onClick={()=>setShowmodule(true)} style={{display:store.isAuth?'none':'block'}}>Войти</li>
                             <li style={{display:store.isAuth?'block':'none'}}><Link to={PATHS.USER}>{store.user.firstName}</Link></li>
                             <li><Link to={PATHS.INFO}>Информация</Link></li>
-                            <li><Link to={PATHS.TEST} >Пройти тест</Link></li>
+                            <li onClick={()=>setShowmodule(true)} style={{display:store.isAuth?'none':'inline'}}>Пройти тест</li>
+                            <li style={{display:store.isAuth?'inline':'none'}}><Link to={PATHS.TEST}>Пройти тест</Link></li>
                             <li><Link to={PATHS.CATALOG}>Психологи</Link></li>
                         </ul>
                     </div>
