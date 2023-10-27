@@ -12,6 +12,7 @@ return(
                     <div className='notif_title'>Запись</div>
                         <div className='notif_text' style={{lineHeight:'2'}}>Время: {writeInfo.time} </div>
                         <div className='notif_text' style={{lineHeight:'2',display:store.user.role==="psychologist"?'block':'none'}}>Контакты: {writeInfo.contact} </div>
+                        <div className='notif_text' style={{lineHeight:'2',display:store.user.role==="psychologist"?'none':'block'}}>Контакты: {writeInfo.to} </div>
                         <div className='ForgetPass_btn'>
                             <button onClick={()=>setShowcontacts(false)}>Закрыть</button>
                         </div>

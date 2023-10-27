@@ -12,9 +12,8 @@ function WriteCard({write}){
     const role=store.user.role==="psychologist"?"Сотрудник":"Психолог";
     const [color,setColor]=useState(0)
     const tryDelete=async()=>{
-        await AuthService.deleteWrite(write.from,write.to,write.date,write.time).then(
-            window.location.reload()
-        )
+        await AuthService.deleteWrite(write.from,write.to,write.date,write.time)
+        window.location.reload()
     }
     return(
         <div className="WriteCard" style={{display:!hideWrite?'block':'none'}}>
