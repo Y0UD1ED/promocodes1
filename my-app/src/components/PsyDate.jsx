@@ -10,7 +10,8 @@ function PsyDate({DateI}){
     const {store}=useContext(Context)
 
     const deleteDate=async()=>{
-        await store.deleteDate(DateI.date,DateI.time).then( window.location.reload())
+        await store.deleteDate(DateI.date,DateI.time);
+        window.location.reload();
        
     }
     return(

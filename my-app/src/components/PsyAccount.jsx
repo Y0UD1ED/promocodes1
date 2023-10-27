@@ -199,7 +199,8 @@ const PsyAccount=()=>{
         minute: '2-digit'});
       const minute=startTime.getMinutes();
       if(filterDay(startDate)&&minute%15===0){
-      await store.addDate(date,time).then(window.location.reload())
+      await store.addDate(date,time)
+      window.location.reload()
       }
   }
 

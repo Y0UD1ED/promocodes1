@@ -39,7 +39,7 @@ export default class AuthService {
         return $api.post('/update_avatar',{file});
     }
 
-    static async addDate(email:string,date:string,time:string):Promise<void>{
+    static async addDate(email:string,date:string,time:string):Promise<string>{
         return $api.post('/addDate',{email,date,time});
     }
 
@@ -58,11 +58,11 @@ export default class AuthService {
         return $api.post(`/PsychoInfos?to=${to}`,{from,to,name,contact,date,time});//
     }
 
-    static async deleteDate(email:string,date:string,time:string):Promise<void>{
+    static async deleteDate(email:string,date:string,time:string):Promise<string>{
         return $api.post('/deleteDate',{email,date,time});//
     }
 
-    static async deleteWrite(from:string,to:string,date:string,time:string):Promise<void>{
+    static async deleteWrite(from:string,to:string,date:string,time:string):Promise<string>{
         return $api.post('/deleteWrite',{from,to,date,time});//
     }
 

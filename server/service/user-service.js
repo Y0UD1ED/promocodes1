@@ -14,6 +14,7 @@ const writeModel = require('../models/write-model');
 const DateModel = require('../models/date-model');
 const emailNameModel = require('../models/emailName-model');
 const { model } = require('mongoose');
+const userModel = require('../models/user-model');
 
 class UserService {
     async registration(email, password, firstName, lastName,role) {//

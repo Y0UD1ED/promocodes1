@@ -153,6 +153,7 @@ class UserController {
             console.log('hi')
             const{email,date,time}=req.body;
             const dateData=await userService.addDate(email,date,time);
+            return res.json("ok")
         }catch(e){
             next(e);
         }
@@ -162,6 +163,7 @@ class UserController {
         try{
             const {email,date,time}=req.body;
             await userService.deleteDate(email,date,time);
+            return res.json("ok")
         }catch(e){
             next(e)
         }
@@ -172,6 +174,7 @@ class UserController {
    
             const {from,to,date,time}=req.body;
             await userService.deleteWrite(from,to,date,time);
+            return res.json("ok")
         }catch(e){
             next(e)
         }
