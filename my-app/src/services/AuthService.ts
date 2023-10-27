@@ -35,7 +35,7 @@ export default class AuthService {
     static async resetPassword(email: string,password:string): Promise<AxiosResponse<string>> {
         return $api.post('/reset-password',{email,password});
     }
-    static async updateAvatar(file:FormData,):Promise<void>{
+    static async updateAvatar(file:FormData,):Promise<string>{
         return $api.post('/update_avatar',{file});
     }
 
